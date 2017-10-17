@@ -18,7 +18,7 @@ Content-Type: text/html
 
 def main():
     s = socket.socket()
-    port = 7070
+    port = 8080
     ai = socket.getaddrinfo("0.0.0.0", port)
     print("Bind address info:", ai)
     addr = ai[0][-1]
@@ -26,7 +26,7 @@ def main():
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind(addr)
     s.listen(5)
-    print("Listening, connect your browser to http://localhost:"+str(port)+"/")
+    print("Listening, connect your browser to http://<host>:"+str(port)+"/")
 
     counter = 0
     while True:
